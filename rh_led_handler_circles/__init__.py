@@ -30,7 +30,7 @@ def drawCircle(args):
                 strip.setPixelColor(pos+8*x+y, colorLow)
     elif args['size'] == 4:
         for x in range(4):
-            full = {0: (1,3), 1: (0,4), 2: (0,4), 3: (1,3)}
+            full = {0: (0,4), 1: (0,4), 2: (0,4), 3: (0,4)}
             for y in range(full[x][0], full[x][1]):
                 strip.setPixelColor(pos+4*x+y, color)
     else:
@@ -76,7 +76,7 @@ def showColorCircles(args):
 def stagingCircles(args):
 
     triggers = args['staging_tones']
-    args['count'] = 1
+    args['count'] = 0
     args['effect_fn'](args)
 
     for i in range(1, triggers):
